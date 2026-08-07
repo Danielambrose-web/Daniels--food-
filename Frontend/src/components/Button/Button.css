@@ -1,5 +1,5 @@
 /* styles/Button.css */
-.button {
+.secondary {
   background-color: var(--color-green-primary);
   color: var(--color-white);
   padding: var(--spacing-small);

@@ -2,6 +2,11 @@ import React from "react";
 import Button from "../Button/Button";
 import "./FoodCard.css";
 
+function handleAdd() {
+    alert("Item added!");
+}
+
+
 const FoodCard = ({ name, price, description, image, onAddToCart }) => {
   return (
     <>
@@ -23,7 +28,7 @@ const FoodCard = ({ name, price, description, image, onAddToCart }) => {
           <Button
             label="Add To Cart"
             variant="secondary"
-            onClick={() => alert("Secondary button clicked!")}
+            onClick={() => alert(handleAdd(price,name))}
             /*onClick={() => onAddToCart(name, price)*/
           />
         </div>
