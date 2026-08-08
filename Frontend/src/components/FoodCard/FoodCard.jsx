@@ -27,7 +27,7 @@ const FoodCard = ({ name, price, description, image, onAddToCart }) => {
           </p>
           <Button
             label="Add To Cart"
-            variant="secondary"
+            variant="primary"
             onClick={() => alert(handleAdd(price,name))}
             /*onClick={() => onAddToCart(name, price)*/
           />
