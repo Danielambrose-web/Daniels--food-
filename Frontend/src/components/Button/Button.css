@@ -2,12 +2,24 @@
 .secondary {
   background-color: var(--color-green-primary);
   color: var(--color-white);
-  padding: var(--spacing-small);
+  padding: var(--button-padding);
   border-radius: 100px;
   cursor: pointer;
 
   &:hover {
     background-color: lighten(var(--color-white), 10%);
     color: var(--color-green-primary);
+  }
+}
+.primary{
+  background-color: var(--color-white);
+  color: var(--color-blue-secondary);
+  padding: var(--button-padding);
+  border-radius: 100px;
+  cursor: pointer;
+
+  &:hover {
+    background-color:var(--color-blue-secondary);
+    color: var(--color-white);
   }
 }
