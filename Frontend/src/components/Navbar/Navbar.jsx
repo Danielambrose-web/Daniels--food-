@@ -1,34 +1,142 @@
-import React from 'react'
-import './Navbar.css'
-import Image from './logo.png'
+import React, { useState } from "react";
+import "./Navbar.css";
+import Image from "./logo.png";
+import Humburger from "./humburger.png";
 import Button from "../Button/Button";
 
 function handleAdd() {
-    alert("Item added!");
+  alert("Item added!");
 }
-
 
 const Navbar = () => {
+  // Controls the active navigation link
+  const [navLinks, setNavlinks] = useState("menu");
+
+  // Controls whether mobile menu is open
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Open / close mobile menu
+  function handleToggle() {
+    setMenuOpen(prev => !prev);
+  }
+
+  // Select a link and close mobile menu
+  function handleNavClick(link) {
+    setNavlinks(link);
+    setMenuOpen(false);
+  }
+
   return (
     <>
-    < div className='Navbar'>
-      <img src={Image} className="png" />
-        <ul className="nav-links">
-          <li>Home</li>
-          <li>Menu</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      <div className="nav-button">
-        <Button 
-        label='Order Now'
-        variant='secondary'
-        onClick={() => alert(handleAdd())}
-        />
-      </div>
-    </div>
-    </>
-  )
-}
+      <nav className="Navbar">
 
-export default Navbar
+        {/* Logo */}
+        <img
+          src={Image}
+          alt="Restaurant Logo"
+          className="logo"
+        />
+
+        {/* Desktop Navigation */}
+        <ul className="nav-links">
+
+          <li
+            onClick={() => handleNavClick("home")}
+            className={navLinks === "home" ? "active" : ""}
+          >
+            Home
+          </li>
+
+          <li
+            onClick={() => handleNavClick("menu")}
+            className={navLinks === "menu" ? "active" : ""}
+          >
+            Menu
+          </li>
+
+          <li
+            onClick={() => handleNavClick("about")}
+            className={navLinks === "about" ? "active" : ""}
+          >
+            About
+          </li>
+
+          <li
+            onClick={() => handleNavClick("contact")}
+            className={navLinks === "contact" ? "active" : ""}
+          >
+            Contact
+          </li>
+
+        </ul>
+
+        {/* Desktop Order Button */}
+        <div className="nav-button">
+          <Button
+            label="Order Now"
+            variant="secondary"
+            onClick={handleAdd}
+          />
+        </div>
+
+        {/* Hamburger */}
+        <div
+          className="hamburger-menu"
+          onClick={handleToggle}
+        >
+          <img
+            src={Humburger}
+            alt="Open navigation menu"
+            className="hamburger-icon"
+          />
+        </div>
+
+      </nav>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="mobile-menu">
+
+          <li
+            onClick={() => handleNavClick("home")}
+            className={navLinks === "home" ? "active" : ""}
+          >
+            Home
+          </li>
+
+          <li
+            onClick={() => handleNavClick("menu")}
+            className={navLinks === "menu" ? "active" : ""}
+          >
+            Menu
+          </li>
+
+          <li
+            onClick={() => handleNavClick("about")}
+            className={navLinks === "about" ? "active" : ""}
+          >
+            About
+          </li>
+
+          <li
+            onClick={() => handleNavClick("contact")}
+            className={navLinks === "contact" ? "active" : ""}
+          >
+            Contact
+          </li>
+
+          <div className="mobile-order-button">
+            <Button
+              label="Order Now"
+              variant="secondary"
+              onClick={handleAdd}
+            />
+          </div>
+
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Navbar;
