@@ -2,17 +2,22 @@ const siteConfig = {
   footer: {
     company: {
       title: "Company",
-      links: ["About", "Careers", "Press"]
+      links: ["About Us", "Our Menu", "Careers", "Contact Us"]
     },
 
     support: {
       title: "Support",
-      links: ["Contact", "FAQ", "Delivery Info"]
+      links: ["FAQs", "Delivery Info", "Privacy Policy", "Terms & Conditions"]
     },
 
     legal: {
       title: "Legal",
-      links: ["Terms", "Privacy"]
+      links: ["Privacy Policy", "Terms of Service", "Cookie Policy"]
+    },
+
+    newsletter: {
+      title: "Stay in the loop",
+      description: "Get updates, offers, and delicious news delivered to your inbox."
     }
   }
 };
