@@ -6,7 +6,6 @@
   width: 100%;
   background-color: #111111;
   color: white;
-
   margin-top: 80px;
 }
 
@@ -18,15 +17,11 @@
 .footer-container {
   width: 90%;
   max-width: 1200px;
-
   margin: 0 auto;
-
   padding: 70px 0 50px;
-
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
   gap: 50px;
 }
 
@@ -49,13 +44,10 @@
 .footer-brand {
   max-width: 250px;
 }
-
 .footer-logo {
   margin: 0 0 12px;
-
   font-size: 24px;
   font-weight: 700;
-
   color: var(--color-green-primary);
 }
 
@@ -65,7 +57,6 @@
 
 .footer-description {
   color: #aaaaaa;
-
   font-size: 14px;
   line-height: 1.7;
 }
@@ -80,7 +71,6 @@
 .legal h3,
 .newsletter h3 {
   margin: 0 0 20px;
-
   font-size: 16px;
   font-weight: 600;
 }
@@ -93,25 +83,19 @@
 .footer-links {
   display: flex;
   flex-direction: column;
-
   gap: 12px;
 }
 
 .footer-links p {
   margin: 0;
-
   color: #aaaaaa;
-
   font-size: 14px;
-
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
 .footer-links p:hover {
   color: var(--color-green-primary);
-
   transform: translateX(3px);
 }
 
@@ -123,14 +107,10 @@
 .newsletter {
   max-width: 280px;
 }
-
 .newsletter > p {
   margin: 0 0 18px;
-
   color: #aaaaaa;
-
   font-size: 14px;
-
   line-height: 1.6;
 }
 
@@ -139,9 +119,8 @@
 
 .newsletter-form {
   width: 100%;
-
   display: flex;
-
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -150,19 +129,12 @@
 
 .newsletter-form input {
   min-width: 0;
-
   flex: 1;
-
   padding: 11px 12px;
-
   border: 1px solid #444444;
-
   border-radius: 6px;
-
   background-color: #1c1c1c;
-
   color: white;
-
   outline: none;
 }
 
@@ -209,27 +181,18 @@
 .footer-bottom {
   width: 90%;
   max-width: 1200px;
-
   margin: 0 auto;
-
   padding: 20px 0;
-
   border-top: 1px solid #2d2d2d;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   gap: 20px;
 }
 
 .footer-bottom p {
   margin: 0;
-
   color: #777777;
-
   font-size: 13px;
 }
 
@@ -240,19 +203,14 @@
 
 .social-links {
   display: flex;
-
-  align-items: center;
-
+  align-items: ceter;
   gap: 20px;
 }
 
 .social-links a {
   color: #aaaaaa;
-
   font-size: 13px;
-
   text-decoration: none;
-
   transition: color 0.3s ease;
 }
 
@@ -269,7 +227,6 @@
 
   .footer-container {
     flex-wrap: wrap;
-
     gap: 40px;
   }
 
@@ -297,13 +254,9 @@
 
   .footer-container {
     width: 85%;
-
     padding: 50px 0 40px;
-
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 40px 30px;
   }
 
@@ -312,7 +265,6 @@
 
   .footer-brand {
     grid-column: 1 / -1;
-
     max-width: 100%;
   }
 
@@ -321,20 +273,15 @@
 
   .newsletter {
     grid-column: 1 / -1;
-
     max-width: 100%;
   }
 
 
   .onmobile {
     width: 85%;
-
     flex-direction: column;
-
     align-items: center;
-
     text-align: center;
-
     padding: 20px 0;
   }
 
@@ -349,9 +296,7 @@
 
   .footer-container {
     width: 85%;
-
     grid-template-columns: 1fr;
-
     gap: 35px;
   }
 
