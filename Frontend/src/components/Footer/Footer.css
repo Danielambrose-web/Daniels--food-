@@ -1,0 +1,22 @@
+.footer {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px;
+}
+
+.footer h2 {
+  color: #333; /* Dark gray text for headers */
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #666; /* Dark gray text for paragraphs */
+}
+
+.flexes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* Add additional styling as needed */
