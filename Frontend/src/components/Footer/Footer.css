@@ -177,7 +177,7 @@
 
 /* Subscribe */
 
-.newsletter-form button {
+/* .newsletter-form button {
   padding: 11px 15px;
 
   border: none;
@@ -199,7 +199,7 @@
   background-color: var(--color-green-hover);
 
   transform: translateY(-1px);
-}
+} */
 
 
 /* =========================
@@ -326,7 +326,7 @@
   }
 
 
-  .footer-bottom {
+  .onmobile {
     width: 85%;
 
     flex-direction: column;
