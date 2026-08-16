@@ -5,6 +5,7 @@ import './index.css';
 // import FoodCard from './components/FoodCard/FoodCard';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import menuData from './data/menuData';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Button label="Secondary Button" variant="secondary" onClick={() => alert('Secondary button clicked!')} /> */}
 
       <Footer/>
+      <img src={menuData.} alt="" />
     </div>
   );
 }
