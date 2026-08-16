@@ -9,6 +9,7 @@
   &:hover {
     background-color: lighten(var(--color-white), 10%);
     color: var(--color-green-primary);
+    border: 3.5px solid var(--color-green-primary);
   }
 }
 .primary{
@@ -17,6 +18,7 @@
   padding: var(--button-padding);
   border-radius: 100px;
   cursor: pointer;
+  border: 3.5px solid var(--color-blue-secondary);
 
   &:hover {
     background-color:var(--color-blue-secondary);
