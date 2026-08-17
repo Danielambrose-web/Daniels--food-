@@ -1,25 +1,33 @@
-// src/App.jsx
-import React from 'react';
-import './index.css';
-// import Button from './components/Button/Button';
-// import FoodCard from './components/FoodCard/FoodCard';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
-import menuData from './data/menuData';
+// import { Routes, Route } from 'react-router-dom';
+// import Navbar from './components/Navbar/Navbar';
+// import Footer from './components/Footer/Footer';
+// import HomePage from './pages/Home/Home';
+// // Import your other pages here...
 
-function App() {
+// export default function App() {
+//   return (
+//     <div className="app-container">
+//       <Navbar />
+//       <Routes>
+//         <Route path="/" element={<HomePage />} />
+//         {/* Add Menu, Cart, Checkout routes here as you build them */}
+//       </Routes>
+//       <Footer />
+//     </div>
+//   );
+// }
 
+import React from "react";
+import MenuPage from "./pages/Menu/Menu";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
+export default function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      {/* <FoodCard/>
-      <Button label="Secondary Button" variant="secondary" onClick={() => alert('Secondary button clicked!')} /> */}
-
-      <Footer/>
-      <img src={menuData.} alt="" />
+    <div className="app-container">
+      <Navbar />
+      <MenuPage />
+      <Footer />
     </div>
   );
 }
-
-export default App;
