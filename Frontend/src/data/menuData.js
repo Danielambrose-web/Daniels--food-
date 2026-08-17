@@ -4,7 +4,7 @@ const menuData = [
     name: "Jollof Rice",
     price: 2500,
     description: "Smoky Nigerian jollof rice served with fried plantain.",
-    image: "../public/images/food_1.png",
+    image: "/images/jollof-rice.jpg",
     category: "Rice"
   },
 
