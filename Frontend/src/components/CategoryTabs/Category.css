@@ -1,0 +1,31 @@
+.category-tabs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs, 12px);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl, 40px);
+}
+
+.tab-btn {
+  background-color: var(--color-gray-bg, #F6F7F5);
+  color: var(--color-black-text, #1A1A1A);
+  border: 1px solid var(--color-gray-border, #E5E7E3);
+  padding: 10px 24px;
+  border-radius: var(--radius-full, 100px);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  border-color: var(--color-green-primary, #2E7D32);
+  color: var(--color-green-primary, #2E7D32);
+}
+
+.tab-btn.active {
+  background-color: var(--color-green-primary, #2E7D32);
+  color: var(--color-white, #FFFFFF);
+  border-color: var(--color-green-primary, #2E7D32);
+}
