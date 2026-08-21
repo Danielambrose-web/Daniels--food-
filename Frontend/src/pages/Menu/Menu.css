@@ -1,0 +1,52 @@
+.menu-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-xl, 60px) var(--space-xl, 80px);
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: var(--space-lg, 32px);
+}
+
+.menu-title {
+  font-size: var(--text-h1-size, 40px);
+  font-weight: 700;
+  color: var(--color-black-text, #1A1A1A);
+  margin-bottom: 8px;
+}
+
+.menu-subtitle {
+  font-size: 16px;
+  color: var(--color-gray-muted, #6B6B6B);
+}
+
+/* Food Cards Grid Layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+  justify-content: center;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-page {
+    padding: 32px 20px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-title {
+    font-size: 30px;
+  }
+}
