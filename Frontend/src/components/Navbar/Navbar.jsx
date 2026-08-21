@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 import Image from "./logo.png";
 import Humburger from "./humburger.png";
 import Button from "../Button/Button";
@@ -10,6 +11,8 @@ function handleAdd() {
 }
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   // Controls the active navigation link
   const [navLinks, setNavlinks] = useState("menu");
 
@@ -71,7 +74,7 @@ const Navbar = () => {
 
         {/* Desktop Order Button */}
         <div className="nav-button">
-          <Button label="Order Now" variant="secondary" onClick={handleAdd} />
+          <Button label="Order Now" variant="secondary" onClick={() => navigate("/cart")} />
         </div>
 
         {/* Hamburger */}
