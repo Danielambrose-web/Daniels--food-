@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/Home/Home";
 import MenuPage from "./pages/Menu/Menu";
 import CartPage from "./pages/Cart/Cart";
-// import CheckoutPage from "./pages/Checkout/Checkout";
+import Checkout from "./pages/Checkout/Checkout";
 // import OrderConfirmationPage from "./pages/OderConfirmation/OrderConfirmation";
 
 export default function App() {
@@ -18,8 +18,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/cart" element={<CartPage />} />
-        {/*<Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/order-confirmation" element={<OrderConfirmationPage />} /> */}
+        <Route path="/checkout" element={<Checkout/>} />
+        {/*<Route path="/order-confirmation" element={<OrderConfirmationPage />} /> */}
       </Routes>
 
       <Footer />
