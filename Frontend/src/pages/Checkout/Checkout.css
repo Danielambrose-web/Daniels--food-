@@ -1,0 +1,245 @@
+.checkout-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.checkout-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.checkout-header h1 {
+  margin-bottom: 12px;
+  font-size: 48px;
+  color: var(--color-black-text);
+}
+
+.checkout-header p {
+  color: var(--color-gray-muted);
+  font-size: 18px;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.checkout-form-section,
+.order-summary {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+}
+
+.checkout-form-section h2,
+.order-summary h2 {
+  margin-bottom: 28px;
+  color: var(--color-black-text);
+  font-size: 24px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-black-text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-gray-bg);
+  color: var(--color-black-text);
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-blue-secondary);
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.order-type-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.order-type-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-black-text);
+  background: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.order-type-option input {
+  width: auto;
+  margin: 0;
+}
+
+.order-type-option.selected {
+  background: var(--color-green-primary);
+  border-color: var(--color-green-primary);
+  color: var(--color-white);
+}
+
+.order-summary {
+  position: sticky;
+  top: 30px;
+}
+
+.summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.summary-item-info h4 {
+  margin: 0 0 6px;
+  color: var(--color-black-text);
+  font-size: 16px;
+}
+
+.summary-item-info p {
+  margin: 0;
+  color: var(--color-gray-muted);
+  font-size: 14px;
+}
+
+.summary-item strong {
+  color: var(--color-green-primary);
+  white-space: nowrap;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--color-gray-border);
+  margin: 24px 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-total span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black-text);
+}
+
+.summary-total strong {
+  font-size: 24px;
+  color: var(--color-green-primary);
+}
+
+.checkout-page--empty {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.checkout-page--empty h1 {
+  margin-bottom: 12px;
+  color: var(--color-black-text);
+}
+
+.checkout-page--empty p {
+  margin-bottom: 24px;
+  color: var(--color-gray-muted);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: static;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .checkout-page {
+    padding: 50px 20px;
+  }
+
+  .checkout-header h1 {
+    font-size: 36px;
+  }
+
+  .checkout-header p {
+    font-size: 16px;
+  }
+
+  .checkout-form-section,
+  .order-summary {
+    padding: 24px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .order-type-options {
+    flex-direction: column;
+  }
+
+  .order-type-option {
+    border-radius: var(--radius-sm);
+  }
+}
