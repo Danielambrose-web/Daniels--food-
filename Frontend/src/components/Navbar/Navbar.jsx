@@ -74,7 +74,7 @@ const Navbar = () => {
 
         {/* Desktop Order Button */}
         <div className="nav-button">
-          <Button label="Order Now" variant="secondary" onClick={() => navigate("/cart")} />
+          <Button label="Cart" variant="secondary" onClick={() => navigate("/cart")} />
         </div>
 
         {/* Hamburger */}
@@ -90,36 +90,38 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="mobile-menu">
-          <li
+          <Link to ="/"
             onClick={() => handleNavClick("home")}
             className={navLinks === "home" ? "active" : ""}
           >
             Home
-          </li>
+          </Link>
 
-          <li
+          <Link to='/menu'
             onClick={() => handleNavClick("menu")}
             className={navLinks === "menu" ? "active" : ""}
           >
             Menu
-          </li>
+          </Link>
 
-          <li
+          <Link
+          to='/about'
             onClick={() => handleNavClick("about")}
             className={navLinks === "about" ? "active" : ""}
           >
             About
-          </li>
+          </Link>
 
-          <li
+          <Link 
+          to="/contact"
             onClick={() => handleNavClick("contact")}
             className={navLinks === "contact" ? "active" : ""}
           >
             Contact
-          </li>
+          </Link>
 
           <div className="mobile-order-button">
-            <Button label="Order Now" variant="secondary" onClick={handleAdd} />
+            <Button label="Order Now" variant="secondary" onClick={() => navigate("/cart")} />
           </div>
         </div>
       )}
