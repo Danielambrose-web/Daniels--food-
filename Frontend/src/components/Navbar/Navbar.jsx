@@ -14,7 +14,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   // Controls the active navigation link
-  const [navLinks, setNavlinks] = useState("menu");
+  const [navLinks, setNavlinks] = useState("home");
 
   // Controls whether mobile menu is open
   const [menuOpen, setMenuOpen] = useState(false);
