@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./About.css";
 
-export function About() {
+function About() {
   return (
     <div className="about-page">
       <div className="page-hero">
@@ -193,3 +193,4 @@ export function About() {
     </div>
   );
 }
+export default About;
