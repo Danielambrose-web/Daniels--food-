@@ -34,7 +34,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero-image-block">
-          <span>HERO FOOD IMAGE</span>
+          <img src="/images/menu_1.png" alt="" />
         </div>
       </section>
 
