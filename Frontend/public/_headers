@@ -1,4 +1,5 @@
 /*
   Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https: fonts.googleapis.com; font-src 'self' data: https: fonts.gstatic.com; img-src 'self' data: blob: https:; frame-src 'self' https: https://www.google.com https://maps.google.com; connect-src 'self' https:;
+  Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https: fonts.googleapis.com; font-src 'self' data: https: fonts.gstatic.com; img-src 'self' data: blob: https:; frame-src 'self' https: https://www.google.com https://maps.google.com; connect-src 'self' blob: https:;
   X-Content-Type-Options: nosniff
 
