@@ -2,11 +2,12 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ label, variant = 'primary', onClick }) => {
+const Button = ({ label, variant = 'primary', onClick, className = '', ...props }) => {
   return (
     <button
-      className={`button ${variant}`}
+      className={`button ${variant} ${className}`.trim()}
       onClick={onClick}
+      {...props}
     >
       {label}
     </button>
