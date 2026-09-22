@@ -1,27 +1,48 @@
 /* styles/Button.css */
-.secondary {
-  background-color: var(--color-green-primary);
-  color: var(--color-white);
-  padding: var(--button-padding);
+
+.button {
+  font-family: inherit;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   cursor: pointer;
-
-  &:hover {
-    background-color: lighten(var(--color-white), 10%);
-    color: var(--color-green-primary);
-    border: 3.5px solid var(--color-green-primary);
-  }
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
 }
-.primary{
-  background-color: var(--color-white);
-  color: var(--color-blue-secondary);
-  padding: var(--button-padding);
+
+.secondary {
+  background-color: var(--color-green-primary, #2E7D32);
+  color: var(--color-white, #FFFFFF);
+  padding: var(--button-padding, 14px 28px);
   border-radius: 100px;
   cursor: pointer;
-  border: 3.5px solid var(--color-blue-secondary);
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
 
-  &:hover {
-    background-color:var(--color-blue-secondary);
-    color: var(--color-white);
-  }
+.secondary:hover {
+  background-color: var(--color-green-hover, #1B5E20);
+  color: var(--color-white, #FFFFFF);
+}
+
+.primary {
+  background-color: var(--color-white, #FFFFFF);
+  color: var(--color-blue-secondary, #1565C0);
+  padding: var(--button-padding, 14px 28px);
+  border-radius: 100px;
+  cursor: pointer;
+  border: 2px solid var(--color-blue-secondary, #1565C0);
+  font-family: inherit;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.primary:hover {
+  background-color: var(--color-blue-secondary, #1565C0);
+  color: var(--color-white, #FFFFFF);
 }
