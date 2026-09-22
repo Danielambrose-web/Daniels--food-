@@ -1,37 +1,28 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 
-// ... (keep the same Leaflet icon-fix code from the previous step here) ...
-
-const SpecificMap = () => {
-  // 1. CHANGE THESE COORDINATES TO YOUR SPECIFIC LOCATION [Lat, Lng]
-  // Example below is for Times Square, NY
-  const myLocation = [40.7588, -73.9851]; 
+const FreeMap = ({
+  lat = 7.440871,
+  lng = 3.906844,
+  zoom = 15,
+  title = "Restaurant Location",
+}) => {
+  // Free OpenStreetMap embed - zero npm dependencies, fully compatible with React 19 & Vite
+  const delta = 0.006;
+  const bbox = `${lng - delta}%2C${lat - delta}%2C${lng + delta}%2C${lat + delta}`;
+  const osmUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
 
   return (
-    <div style={{ height: '500px', width: '100%' }}>
-      <MapContainer 
-        center={myLocation} // Centers the map here initially
-        zoom={15}           // Zoom level (higher number = closer view)
-        scrollWheelZoom={true}
-        style={{ height: '100%', width: '100%' }}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        
-        {/* 2. Place the marker pin at your specific location */}
-        <Marker position={myLocation}>
-          <Popup>
-            <strong>Times Square</strong> <br />
-            The crossroads of the world.
-          </Popup>
-        </Marker>
-      </MapContainer>
+    <div className="free-map-container" style={{ width: '100%', height: '100%', minHeight: '260px', borderRadius: '16px', overflow: 'hidden' }}>
+      <iframe
+        title={title}
+        width="100%"
+        height="100%"
+        style={{ border: 0, display: 'block', width: '100%', height: '100%', minHeight: '260px' }}
+        loading="lazy"
+        src={osmUrl}
+      />
     </div>
   );
 };
 
-export default SpecificMap;
+export default FreeMap;
