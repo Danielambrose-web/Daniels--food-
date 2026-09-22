@@ -210,6 +210,14 @@
   grid-template-columns: 1.2fr 0.8fr;
   gap: 48px;
   align-items: center;
+.about-page .visit-cta-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-page .visit-cta-content {
+  max-width: 680px;
+  width: 100%;
 }
 
 .about-page .address {
@@ -285,51 +293,9 @@
   color: var(--color-white, #FFFFFF);
 }
 
-.about-page .map-card {
-  min-height: 280px;
-  padding: 28px;
-  border-radius: 24px;
-  border: 1px solid var(--color-gray-border, #E5E7E3);
-  background: linear-gradient(180deg, var(--color-gray-bg, #F6F7F5) 0%, #F1F3EF 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.about-page .map-card > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.about-page .map-pin {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(46, 125, 50, 0.1);
-  color: var(--color-green-primary, #2E7D32);
-}
-
-.about-page .map-card strong {
-  font-size: 1.15rem;
-}
-
-.about-page .map-note {
-  color: var(--color-gray-muted, #6B6B6B);
-  font-size: 0.86rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 @media (max-width: 1024px) {
   .about-page .gallery,
-  .about-page .philosophy,
-  .about-page .hours-grid{
+  .about-page .philosophy {
     grid-template-columns: 1fr;
   }
 
@@ -340,31 +306,96 @@
 }
 
 @media (max-width: 768px) {
+  .about-page .container {
+    width: calc(100% - 32px);
+  }
+
   .about-page .section {
-    padding: 64px 0;
+    padding: 48px 0;
   }
 
   .about-page .page-hero {
-    padding-top: 56px;
+    padding: 48px 0 28px;
   }
 
-  .about-page .gallery,
-  .about-page .values,
+  .about-page .page-hero h1 {
+    font-size: 32px;
+  }
+
+  .about-page .page-hero p:last-child {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .about-page .gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .about-page .gallery img {
+    height: 240px;
+    border-radius: 18px;
+  }
+
+  .about-page .story p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about-page .philosophy {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-page .philosophy img {
+    height: 240px;
+    border-radius: 18px;
+  }
+
+  .about-page .values {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .about-page .value-card {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .about-page .wide-photo img {
+    height: 220px;
+  }
+
+  .about-page .wide-photo {
+    border-radius: 18px;
+  }
+
   .about-page .reviews {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-page .review {
+    padding: 20px 18px;
+    border-radius: 18px;
   }
 
   .about-page .hours-list li {
-    flex-direction: column;
-    align-items: flex-start;
+    font-size: 14px;
+    padding: 12px 0;
   }
 
   .about-page .inline-actions {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+    gap: 10px;
   }
 
   .about-page .btn {
     width: 100%;
+    box-sizing: border-box;
   }
 }

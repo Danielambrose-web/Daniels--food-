@@ -138,8 +138,8 @@ function About() {
       </section>
 
       <section className="section bg-white border-y">
-        <div className="container hours-grid">
-          <div>
+        <div className="container visit-cta-container">
+          <div className="visit-cta-content">
             <p className="eyebrow">Visit us</p>
             <h2 className="section-title">Location & hours</h2>
             <p className="address">
@@ -169,23 +169,6 @@ function About() {
               <Link className="btn btn-outline-dark" to="/contact">
                 Contact us
               </Link>
-            </div>
-          </div>
-          <div className="map-card">
-            <div>
-              <div className="map-pin">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-              </div>
-              <p>
-                <strong>Lekki Phase 1, Lagos</strong>
-              </p>
-              <p className="muted">
-                14 Admiralty Way, Lekki Phase 1, Lagos
-              </p>
-              <p className="map-note">Map placeholder</p>
             </div>
           </div>
         </div>
