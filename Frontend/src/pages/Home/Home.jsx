@@ -9,7 +9,7 @@ import "./Home.css";
 export default function HomePage() {
   const { addItem } = useCart();
 
-  // Pick top 4 items for the "Popular This Week" section (HP-03)
+  // Top items for "Popular This Week"
   const popularItems = menuData.slice(0, 4);
 
   return (
@@ -19,28 +19,43 @@ export default function HomePage() {
         <div className="hero-content">
           <h1 className="hero-title">
             Fresh, Local Food <br />
-            <span className="text-green">Delivered To Your Door</span>
+            <span className="text-green">Delivered To You</span>
           </h1>
           <p className="hero-subtext">
-            Seasonal ingredients, chef-crafted meals, and delivery in under 30 minutes.
+            Seasonal ingredients, delivered in under 30 minutes.
           </p>
-          <div className="hero-actions">
+
+          <div className="hero-actions desktop-hero-actions">
             <Link to="/menu">
-              <Button label="Order Now" variant="primary" />
+              <Button label="Order Now" variant="secondary" className="hero-btn-primary" />
             </Link>
             <Link to="/menu">
-              <Button label="View Menu" variant="secondary" />
+              <Button label="View Menu" variant="primary" className="hero-btn-secondary" />
             </Link>
           </div>
         </div>
+
         <div className="hero-image-block">
-          <img src="/images/menu_1.png" alt="" />
+          <img src="/images/menu_1.png" alt="Fresh food plate" className="hero-img" />
+        </div>
+
+        {/* Mobile-only Order Now Button (sits directly under image on mobile) */}
+        <div className="mobile-hero-actions">
+          <Link to="/menu" className="mobile-hero-link">
+            <button type="button" className="mobile-order-btn">
+              Order Now
+            </button>
+          </Link>
         </div>
       </section>
 
       {/* HP-03: Featured / Popular Menu Items */}
       <section className="featured-section">
-        <h2 className="section-title">Popular This Week</h2>
+        <div className="section-header-wrap">
+          {/* <span className="section-eyebrow">FEATURED MENU ITEMS</span> */}
+          <h2 className="section-title">Popular This Week</h2>
+        </div>
+
         <div className="featured-grid">
           {popularItems.map((item) => (
             <FoodCard
@@ -59,22 +74,25 @@ export default function HomePage() {
       {/* HP-04: About / Why Choose Us */}
       <section className="why-us-section">
         <div className="why-us-image-block">
-          <span>ABOUT IMAGE</span>
+          <img
+            src="https://images.pexels.com/photos/8166269/pexels-photo-8166269.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Freshly prepared dishes"
+            className="why-us-img"
+          />
         </div>
+
         <div className="why-us-content">
+          {/* <span className="section-eyebrow">WHY CHOOSE US</span> */}
           <h2 className="section-title">Why Choose Us</h2>
           <ul className="why-us-list">
             <li>
-              <span className="dot"></span> Locally sourced ingredients
+              <span className="dot"></span> Locally sourced
             </li>
             <li>
               <span className="dot"></span> Fresh, never frozen
             </li>
             <li>
-              <span className="dot"></span> 25-35 minute delivery
-            </li>
-            <li>
-              <span className="dot"></span> Eco-friendly packaging
+              <span className="dot"></span> Fast delivery
             </li>
           </ul>
         </div>
@@ -82,22 +100,26 @@ export default function HomePage() {
 
       {/* HP-05: Testimonials */}
       <section className="testimonials-section">
-        <h2 className="section-title">What Our Customers Say</h2>
+        <div className="section-header-wrap">
+          {/* <span className="section-eyebrow">TESTIMONIALS</span> */}
+          <h2 className="section-title">Customer Love</h2>
+        </div>
+
         <div className="testimonials-grid">
           <div className="testimonial-card">
             <div className="rating">★★★★★</div>
-            <p>"Best food delivery experience I've had all year!"</p>
-            <span className="customer-name">— Chidi O.</span>
+            <p className="testimonial-quote">"Amazing food, every time."</p>
+            <span className="customer-name">— Customer Name</span>
           </div>
           <div className="testimonial-card">
             <div className="rating">★★★★★</div>
-            <p>"Fast delivery and the Chapman drink was crisp and chilling."</p>
-            <span className="customer-name">— Amina Y.</span>
+            <p className="testimonial-quote">"Amazing food, every time."</p>
+            <span className="customer-name">— Customer Name</span>
           </div>
           <div className="testimonial-card">
             <div className="rating">★★★★★</div>
-            <p>"Authentic flavors, prompt delivery. 10/10 recommendation!"</p>
-            <span className="customer-name">— Emeka K.</span>
+            <p className="testimonial-quote">"Authentic flavors, prompt delivery. 10/10!"</p>
+            <span className="customer-name">— Customer Name</span>
           </div>
         </div>
       </section>
