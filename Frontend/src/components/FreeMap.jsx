@@ -6,20 +6,21 @@ const FreeMap = ({
   zoom = 15,
   title = "Restaurant Location",
 }) => {
-  // Free OpenStreetMap embed - zero npm dependencies, fully compatible with React 19 & Vite
-  const delta = 0.006;
-  const bbox = `${lng - delta}%2C${lat - delta}%2C${lng + delta}%2C${lat + delta}`;
-  const osmUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
+  // Production-grade Google Maps Embed - loads reliably on all deployed domains (Vercel, Netlify, etc.)
+  // Zero API key required, zero npm dependencies, 100% compatible with React 19 & modern browsers
+  const mapUrl = `https://maps.google.com/maps?q=${lat},${lng}&hl=en&z=${zoom}&output=embed`;
 
   return (
-    <div className="free-map-container" style={{ width: '100%', height: '100%', minHeight: '260px', borderRadius: '16px', overflow: 'hidden' }}>
+    <div className="free-map-container" style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden' }}>
       <iframe
         title={title}
         width="100%"
         height="100%"
-        style={{ border: 0, display: 'block', width: '100%', height: '100%', minHeight: '260px' }}
+        style={{ border: 0, display: 'block', width: '100%', height: '100%' }}
         loading="lazy"
-        src={osmUrl}
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        src={mapUrl}
       />
     </div>
   );

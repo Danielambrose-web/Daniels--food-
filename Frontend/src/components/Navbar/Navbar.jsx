@@ -1,32 +1,23 @@
-import  { useState } from "react";
+import { useState } from "react";
 import "./Navbar.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Image from "./logo.png";
 import Humburger from "./humburger.png";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
-
-function handleAdd() {
-  alert("Item added!");
-}
 
 const Navbar = () => {
   const navigate = useNavigate();
-
-  // Controls the active navigation link
-  const [navLinks, setNavlinks] = useState("home");
+  const location = useLocation();
+  const pathname = location.pathname;
 
   // Controls whether mobile menu is open
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Open / close mobile menu
   function handleToggle() {
     setMenuOpen((prev) => !prev);
   }
 
-  // Select a link and close mobile menu
-  function handleNavClick(link) {
-    setNavlinks(link);
+  function handleNavClick() {
     setMenuOpen(false);
   }
 
@@ -34,43 +25,40 @@ const Navbar = () => {
     <>
       <nav className="Navbar">
         {/* Logo */}
-        <img src={Image} alt="Restaurant Logo" className="logo" />
+        <Link to="/" onClick={handleNavClick}>
+          <img src={Image} alt="Restaurant Logo" className="logo" />
+        </Link>
 
         {/* Desktop Navigation */}
-        <ul className="nav-links">
+        <div className="nav-links">
           <Link
             to="/"
-            onClick={() => handleNavClick("home")}
-            className={navLinks === "home" ? "active" : ""}
+            className={pathname === "/" ? "active" : ""}
           >
             Home
           </Link>
 
           <Link
             to="/menu"
-            onClick={() => handleNavClick("menu")}
-            className={navLinks === "menu" ? "active" : ""}
+            className={pathname === "/menu" ? "active" : ""}
           >
             Menu
           </Link>
 
           <Link
             to="/about"
-            onClick={() => handleNavClick("about")}
-            className={navLinks === "about" ? "active" : ""}
+            className={pathname === "/about" ? "active" : ""}
           >
             About
           </Link>
 
           <Link
             to="/contact"
-            onClick={() => handleNavClick("contact")}
-            className={navLinks === "contact" ? "active" : ""}
+            className={pathname === "/contact" ? "active" : ""}
           >
-            {" "}
             Contact
           </Link>
-        </ul>
+        </div>
 
         {/* Desktop Order Button */}
         <div className="nav-button">
@@ -90,32 +78,34 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="mobile-menu">
-          <Link to ="/"
-            onClick={() => handleNavClick("home")}
-            className={navLinks === "home" ? "active" : ""}
+          <Link
+            to="/"
+            onClick={handleNavClick}
+            className={pathname === "/" ? "active" : ""}
           >
             Home
           </Link>
 
-          <Link to='/menu'
-            onClick={() => handleNavClick("menu")}
-            className={navLinks === "menu" ? "active" : ""}
+          <Link
+            to="/menu"
+            onClick={handleNavClick}
+            className={pathname === "/menu" ? "active" : ""}
           >
             Menu
           </Link>
 
           <Link
-          to='/about'
-            onClick={() => handleNavClick("about")}
-            className={navLinks === "about" ? "active" : ""}
+            to="/about"
+            onClick={handleNavClick}
+            className={pathname === "/about" ? "active" : ""}
           >
             About
           </Link>
 
-          <Link 
-          to="/contact"
-            onClick={() => handleNavClick("contact")}
-            className={navLinks === "contact" ? "active" : ""}
+          <Link
+            to="/contact"
+            onClick={handleNavClick}
+            className={pathname === "/contact" ? "active" : ""}
           >
             Contact
           </Link>
