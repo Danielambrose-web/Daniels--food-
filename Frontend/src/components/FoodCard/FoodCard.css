@@ -1,56 +1,128 @@
-/* src/styles.css */
-
 .food-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background-color: var( --color-gray-bg);
-  width: 280px;
- border: 1px solid var(--color-gray-border);
- border-radius: 20px;
- box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: var(--color-white, #ffffff);
+  width: 100%;
+  max-width: 280px;
+  border: 1px solid var(--color-gray-border, #E5E7E3);
+  border-radius: 22px;
+  padding: 12px 12px 34px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
+
+.food-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* Image container with rounded corners and subtle border */
+.food-card-image-wrapper {
+  width: 100%;
+  height: 160px;
+  border-radius: 14px;
+  background-color: #F4F5F4;
+  border: 1px solid var(--color-gray-border, #E5E7E3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .food-card-image {
   width: 100%;
-  height: 170px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 14px;
-  background: #f3f3f3;
+  display: block;
 }
-.food-info {
-  margin-top: 10px;
+
+/* Placeholder for missing/loading food images */
+.food-card-image-placeholder {
+  color: #8C908B;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  user-select: none;
 }
+
+/* Content section below image */
+.food-card-info {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 2px 0 2px;
+  flex: 1;
+}
+
+/* Header row: title and price */
 .food-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
 }
-.food-header h3 {
-  font-size: 22px;
+
+.food-title {
+  font-size: 16px;
   font-weight: 700;
-  color: #333;
+  color: var(--color-black-text, #1A1A1A);
   margin: 0;
+  line-height: 1.25;
 }
 
 .food-price {
-  color: #2e7d32;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.food-desc {
-  color: #7d7d7d;
+  color: var(--color-green-primary, #2E7D32);
   font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-p {
-  color: var(--color-black-text);
-  line-height: 1.6;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
 }
 
+/* Description */
+.food-desc {
+  color: var(--color-gray-muted, #6B6B6B);
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin: 0 0 16px 0;
+  min-height: 36px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
+/* Full-width pill-shaped Add to Cart button */
+.food-card .button,
+.food-card-btn {
+  width: 100%;
+  background-color: var(--color-green-primary, #2E7D32);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  line-height: 1.4;
+  outline: none;
+  margin-top: auto;
+}
 
+.food-card .button:hover,
+.food-card-btn:hover {
+  background-color: var(--color-green-hover, #1B5E20);
+  color: #FFFFFF;
+  border: none;
+}
+
+.food-card .button:active,
+.food-card-btn:active {
+  transform: scale(0.98);
+}

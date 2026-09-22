@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import "./FoodCard.css";
 
@@ -9,36 +10,55 @@ const FoodCard = ({
   image,
   onAddToCart,
 }) => {
+  const [imageError, setImageError] = useState(false);
+
+  const formattedPrice =
+    typeof price === "number"
+      ? `₦${price.toLocaleString()}`
+      : price?.toString().startsWith("₦") || price?.toString().startsWith("$")
+      ? price
+      : `₦${price}`;
+
   return (
     <div className="food-card">
-      <img
-        src={image}
-        alt={name}
-        className="food-card-image"
-      />
+      <div className="food-card-image-wrapper">
+        {image && !imageError ? (
+          <img
+            src={image}
+            alt={name}
+            className="food-card-image"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="food-card-image-placeholder">FOOD IMAGE</div>
+        )}
+      </div>
 
       <div className="food-card-info">
         <div className="food-header">
-          <h3>{name}</h3>
-          <p className="food-price">₦{price.toLocaleString()}</p>
+          <h3 className="food-title">{name}</h3>
+          <span className="food-price">{formattedPrice}</span>
         </div>
 
-        <p className="food-disc">
+        <p className="food-desc">
           {description}
         </p>
 
         <Button
-          label="Add To Cart"
-          variant="primary"
-          onClick={() =>
-            onAddToCart({
-              id,
-              name,
-              price,
-              description,
-              image,
-            })
-          }
+          label="+ Add to Cart"
+          variant="secondary"
+          className="food-card-btn"
+          onClick={() => {
+            if (onAddToCart) {
+              onAddToCart({
+                id,
+                name,
+                price,
+                description,
+                image,
+              });
+            }
+          }}
         />
       </div>
     </div>
