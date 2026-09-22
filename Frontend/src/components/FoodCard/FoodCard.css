@@ -126,3 +126,14 @@
 .food-card-btn:active {
   transform: scale(0.98);
 }
+
+@media (max-width: 768px) {
+  .food-card {
+    max-width: 100%;
+    padding: 12px 12px 28px 12px;
+  }
+
+  .food-card-image-wrapper {
+    height: 180px;
+  }
+}

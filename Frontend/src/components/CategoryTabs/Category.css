@@ -29,3 +29,25 @@
   color: var(--color-white, #FFFFFF);
   border-color: var(--color-green-primary, #2E7D32);
 }
+
+@media (max-width: 640px) {
+  .category-tabs-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 4px 4px 12px 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .category-tabs-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
