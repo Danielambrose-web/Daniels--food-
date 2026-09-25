@@ -1,10 +1,17 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 const CartContext = createContext();
+const STORAGE_KEY = "food-order-cart";
 
-const initialState = {
-  cart: [],
-};
+function getInitialState() {
+  try {
+    if (typeof window === "undefined") return { cart: [] };
+    const savedCart = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "[]");
+    return { cart: Array.isArray(savedCart) ? savedCart : [] };
+  } catch {
+    return { cart: [] };
+  }
+}
 
 function cartReducer(state, action) {
   switch (action.type) {
@@ -15,7 +22,10 @@ function cartReducer(state, action) {
 
       if (existingIndex > -1) {
         const updatedCart = [...state.cart];
-        updatedCart[existingIndex].quantity += 1;
+        updatedCart[existingIndex] = {
+          ...updatedCart[existingIndex],
+          quantity: updatedCart[existingIndex].quantity + 1,
+        };
         return { ...state, cart: updatedCart };
       }
 
@@ -53,7 +63,15 @@ function cartReducer(state, action) {
 }
 
 export function CartProvider({ children }) {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, undefined, getInitialState);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state.cart));
+    } catch {
+      // Storage may be unavailable in restricted browser contexts.
+    }
+  }, [state.cart]);
 
   const addItem = (item) => dispatch({ type: "ADD_ITEM", payload: item });
   const removeItem = (id) => dispatch({ type: "REMOVE_ITEM", payload: id });
