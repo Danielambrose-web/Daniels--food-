@@ -127,6 +127,41 @@
   transform: scale(0.98);
 }
 
+.food-card-quantity {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 100px;
+  background-color: var(--color-green-primary, #2E7D32);
+  color: #FFFFFF;
+  margin-top: auto;
+  overflow: hidden;
+}
+
+.food-quantity-button {
+  width: 44px;
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.food-quantity-button:hover {
+  background-color: var(--color-green-hover, #1B5E20);
+}
+
+.food-quantity-count {
+  min-width: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .food-card {
     max-width: 100%;
