@@ -60,7 +60,7 @@ export default function ContactPage() {
         <div className="contact-layout">
           {/* Left Column: Form */}
           <section className="contact-form-section">
-            <span className="form-eyebrow">ORDER / CONTACT FORM</span>
+            {/* <span className="form-eyebrow">ORDER / CONTACT FORM</span> */}
 
             {submitted && (
               <div className="form-success-banner">
